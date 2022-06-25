@@ -20,10 +20,10 @@ function Paypal() {
       .create({
         purchase_units: [
           {
-            description: 'This is the Book Worth 100$',
+            description: 'user@gmail.com',
             amount: {
               currency_code: 'USD',
-              value: 100,
+              value: 7,
             },
           },
         ],
@@ -40,6 +40,7 @@ function Paypal() {
   const onApprove = (data, actions) => {
     return actions.order.capture().then(function (details) {
       const { payer } = details
+      console.log(details);
       setSuccess(true)
     })
   }
@@ -53,7 +54,7 @@ function Paypal() {
       <PayPalScriptProvider
         options={{
           'client-id':
-            'AS-ZtxKIIpGA5Jds09eGkuC9Be145zO8yjie1zbGeTJLFjPX7HROrWNVzLQGDfuc_5-Y4c0-N-PnSjjW',
+            'AesnfagOrssT91TSgQFgdx5z_JWr5__VoikrT_qWW4rwnNuAgxa8vmmiPd1MfOmC3gFVlW1WFptsAOel',
         }}
       >
         {checkout ? (
@@ -70,7 +71,7 @@ function Paypal() {
                 setCheckout(true)
               }}
             >
-              CHECKOUT NOW
+              PAY NOW
             </Button>
           </>
         )}

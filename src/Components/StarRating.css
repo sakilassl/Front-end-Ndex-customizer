@@ -1,0 +1,25 @@
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+
+  }
+  .on {
+    color: rgb(255, 95, 2);
+  }
+  .off {
+    color: rgb(116, 116, 116);
+  }
+  .button {
+    size: 100px;
+  }
+  
+  body {
+    padding: 100px;
+  }
+.star {
+    font-size:50px;
+}

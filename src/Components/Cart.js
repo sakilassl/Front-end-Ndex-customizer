@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Paypal from './Paypal'
+import img from '../Components/Images/img.jpeg'
+import Navbar from './Navbar'
 const Container = styled.div``
 
 const Wrapper = styled.div`
@@ -156,12 +158,14 @@ const Button = styled.button`
 const Cart = () => {
   const [count, setCount] = useState(0)
   return (
+  
     <Container>
+       <Navbar />
       <div className='container'>
         <Wrapper>
-          <Title>YOUR BAG</Title>
+          <Title>YOUR ITEM</Title>
           <Top>
-            <Link to={'/'}>
+            <Link to={'/Shopping'}>
               <TopButton>CONTINUE SHOPPING</TopButton>
             </Link>
         
@@ -170,13 +174,13 @@ const Cart = () => {
             <Info>
               <Product>
                 <ProductDetail>
-                  <Image src='https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A' />
+                  <Image src={img} />
                   <Details>
                     <ProductName>
-                      <b>Product:</b> JESSIE THUNDER SHOES
+                      <b>Product:</b> SHORT FROCK
                     </ProductName>
                     <ProductId>
-                      <b>ID:</b> 93813718293
+                      <b>Product ID:</b> p001
                     </ProductId>
                   </Details>
                 </ProductDetail>
@@ -201,7 +205,7 @@ const Cart = () => {
                       }}
                     />
                   </ProductAmountContainer>
-                  <ProductPrice>$ {count * 120}</ProductPrice>
+                  <ProductPrice>$ {count * 7}</ProductPrice>
                 </PriceDetail>
               </Product>
             </Info>
@@ -209,19 +213,15 @@ const Cart = () => {
               <SummaryTitle>ORDER SUMMARY</SummaryTitle>
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>$ 80</SummaryItemPrice>
+                <SummaryItemPrice>$ {count * 7}</SummaryItemPrice>
               </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Estimated Shipping</SummaryItemText>
-                <SummaryItemPrice>$ 5.90</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Shipping Discount</SummaryItemText>
-                <SummaryItemPrice>$ -5.90</SummaryItemPrice>
-              </SummaryItem>
+              {/* <SummaryItem>
+                <SummaryItemText>Discount</SummaryItemText>
+                <SummaryItemPrice>Rs -70.90</SummaryItemPrice>
+              </SummaryItem> */}
               <SummaryItem type='total'>
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>$ 80</SummaryItemPrice>
+                <SummaryItemPrice>$ {count * 7}</SummaryItemPrice>
               </SummaryItem>
               <Paypal />
             </Summary>
