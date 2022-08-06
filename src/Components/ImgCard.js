@@ -1,6 +1,7 @@
 import React from 'react'
-import img from '../Components/Images/img.jpeg'
+import img from '../Components/Images/download.jpeg'
 import "./ImgCard.css";
+import { Link } from 'react-router-dom';
 import RatingResponse from './RatingResponse';
 
 function ImgCard() {
@@ -11,9 +12,10 @@ function ImgCard() {
   <img src={img} />
   <h1>Short Frock</h1>
   <p class="price">$7</p>
-  <p>Product ID : p001</p>
-  <p><button>Add to Cart</button></p>
-  {/* <RatingResponse /> */}
+  <p>From United States</p>
+  <Link to="/BillingDetails">
+  <p><button>Buy product</button></p>
+  </Link>
 </div>
   )
 }

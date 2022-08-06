@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Paypal from './Paypal'
-import img from '../Components/Images/img.jpeg'
+import img from '../Components/Images/download.jpeg'
 import Navbar from './Navbar'
 const Container = styled.div``
 
@@ -128,7 +128,7 @@ const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
+  height: 35vh;
 `
 
 const SummaryTitle = styled.h1`
@@ -180,7 +180,7 @@ const Cart = () => {
                       <b>Product:</b> SHORT FROCK
                     </ProductName>
                     <ProductId>
-                      <b>Product ID:</b> p001
+                      <b>Ships From United States</b>
                     </ProductId>
                   </Details>
                 </ProductDetail>
@@ -223,7 +223,7 @@ const Cart = () => {
                 <SummaryItemText>Total</SummaryItemText>
                 <SummaryItemPrice>$ {count * 7}</SummaryItemPrice>
               </SummaryItem>
-              <Paypal />
+              <Paypal amount={count * 7}/>
             </Summary>
             
           </Bottom>
